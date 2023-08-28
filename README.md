@@ -10,9 +10,7 @@ FlexWAN is a novel flexible WAN infrastructure designed to provision cost effect
 |  Source Files                 |  Description                                                 |
 |  -----                        |  -----                                                       |
 |  `algorithms/`                |  Folder of different TE algorithms (ARROW, FFC, TeaVaR, etc.)|
-|  `plotall.jl`                 |  Plotting parallel generated results                         |
 |  `src/aggregatetickets.jl`    |  Aggregating parallel generated tickets                      |
-|  `src/author.jl`              |  Code contributors information                               |
 |  `src/controller.jl`          |  Traffic engineering controller                              |
 |  `src/environment.jl`         |  Fiber cut scenario generator                                |
 |  `src/evaluation.jl`          |  Evaluating TE algorithms with fiber cut scenarios           |
@@ -32,7 +30,6 @@ FlexWAN is a novel flexible WAN infrastructure designed to provision cost effect
 |  Data Files                     |  Description                                              |
 |  -----                          |  -----                                                    |
 |  `data/topology/`               |  Input topology data                                      |
-|  `data/topology/DATAFORMATS.md` |  Explain the data format for input topology data          |
 |  `data/experiment/`             |  Simulation results will be saved here                    |
 |  `data/parallel_experiment/`    |  Simulation results of parallel runs will be saved here   |
 
@@ -52,7 +49,7 @@ julia initialize.jl
 
 For optical planning: 
 ```
-optical_net_planning.jl
+julia optical_net_planning_channel.jl
 ```
 
 For restoration: 
