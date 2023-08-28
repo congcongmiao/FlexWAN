@@ -267,7 +267,7 @@ function ReadCrossLayerTopo(dir, topology, topology_index, verbose, expanded_spe
     fixgrid_slot_spectrum = 50 #fixgrid_slot的频谱，50GHZ
     flexgrid_slot_spectrum = 12.5 #6.25 #fixgrid_slot的频谱，6.25 GHZ; 这里要先使用flexgrid生成IPlink路由和fiber path上的capacity，所以还是使用6.25
     # Cband = 40
-    # 96*(floor(Int, fixgrid_slot_spectrum / flexgrid_slot_spectrum))
+    Cband = 96*(floor(Int, fixgrid_slot_spectrum / flexgrid_slot_spectrum))
 
     capacitycode = ones(length(fiberlinks), Cband)
     for fiber in 1:length(fiberlinksSpectrum_flexgrid)
