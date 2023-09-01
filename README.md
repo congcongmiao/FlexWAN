@@ -52,7 +52,7 @@ Here, we detail the contents of the input files used for optical planning and th
 `./${topology}/IP_topo_${IPTOPO_ID}/IP_topo_flexgrid.txt`, each line represents an IP link for flexgrid
 >[Format] *src* (the source node of the IP link), *dst* (the destination node of the IP link), *index* (the index of the IP link (if parallel IP link exists), *capacity* (the capacity of the IP links (related to the number of wavelengths of this IP link), *fiberpath_index* (the set of fiber link indices that this IP link is routed through), *wavelength* (the set of wavelengths that supports this IP link), *failure* (the failure probability of the IP link if specified from this input file).
 
-### 2.2. Source code for the TE simulation for FlexWAN.
+### 2.2. Source code for the optical planning and TE simulation for FlexWAN
 
 |  Source Files                 |  Description                                                 |
 |  -----                        |  -----                                                       |
@@ -70,9 +70,6 @@ Here, we detail the contents of the input files used for optical planning and th
 |  `src/topodraw.jl`            |  Visualize network topology and tunnel flows                 |
 |  `src/topoprovision.jl`       |  Provision IP topology on top of given optical topology      |
 
-
-
-
 ### 2.3. Executable shells for the running TE simulation for FlexWAN.
 
 |  Executable Files             |  Description                                          |
@@ -80,21 +77,32 @@ Here, we detail the contents of the input files used for optical planning and th
 |  `optical_net_planning.jl`    |  Planning                                             |
 |  `abstract_optical_layer.sh`  |  Restoration                                          |
 
+In addition to optical planning and restoration, FlexWAN involves the processing of three intermediate results. These results are handled by the following scripts:
+
+|  Executable Files                                |  Description                                          |
+|  -----                                           |  -----                                                |
+|  `src/length_gap_spec_efficiency_analysis.jl`    | Analyzes spectral efficiency in relation to length gaps within the optical network.    |
+|  `src/path_length_length_data_rate_analysis.jl`  | Examines the relationship between path lengths and data rate capabilities in the network.    |
+|  `src/transponder_spec_analysis.jl`              | Assesses the specifications and capabilities of transponders in the optical network.        |
+
 ## 3. Running simulation
+Running the FlexWAN simulation involves several important steps, including meeting requirements, setting up the environment, running the system, and processing intermediate results. Below, we provide a detailed guide on how to run the FlexWAN simulation effectively.
 
 ### 3.1. Requirements
+Before starting the FlexWAN simulation, ensure that you have the necessary dependencies in place. Below are the major dependencies and the steps for package dependencies and environment setup:
 #### Major Dependencies
+The primary dependencies for the FlexWAN simulation include:
 * Julia 1.6.1
 * JuMP 0.21.6
 * Gurobi 9.1.2
-#### Package dependencies and environment setup
-To get started, follow these steps:
-
-Initialize the Julia environment by installing the required packages and prepare the results directories by running:
+#### Initialize the Julia Environment
+Run the following command to initialize your Julia environment, install the necessary packages, and create the directories needed to store simulation results:
 ```
 julia initialize.jl
 ```
-#### Run the system
+### 3.2. Run the system
+Once your environment is set up, you can run the FlexWAN simulation. There are two main processes: optical planning and restoration.
+
 For optical planning, run the following command:
 ```
 julia optical_net_planning_channel.jl
@@ -104,11 +112,10 @@ To perform restoration, execute the provided shell script:
 ```
 bash abstract_optical_layer.sh
 ```
-### Intermediate Result Processing
-In addition to optical planning and restoration, FlexWAN involves the processing of three intermediate results. These results are handled by the following scripts:
-
-|  Executable Files                                |  Description                                          |
-|  -----                                           |  -----                                                |
-|  `src/length_gap_spec_efficiency_analysis.jl`    | Analyzes spectral efficiency in relation to length gaps within the optical network.    |
-|  `src/path_length_length_data_rate_analysis.jl`  | Examines the relationship between path lengths and data rate capabilities in the network.    |
-|  `src/transponder_spec_analysis.jl`           | Assesses the specifications and capabilities of transponders in the optical network.        |
+### 3.3. Intermediate Result Processing
+To handled the intermediate results, execute the following scripts:
+```
+julia src/length_gap_spec_efficiency_analysis.jl
+julia src/path_length_length_data_rate_analysis.jl
+julia src/transponder_spec_analysis.jl
+```
