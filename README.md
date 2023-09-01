@@ -103,11 +103,12 @@ julia initialize.jl
 ### 3.2. Run the system
 Once your environment is set up, you can run the FlexWAN simulation. There are two main processes: optical planning and restoration.
 
+#### Optical Planning
 For optical planning, run the following command:
 ```
 julia optical_net_planning_channel.jl
 ```
-
+#### Restoration
 To perform restoration, execute the provided shell script:
 ```
 bash abstract_optical_layer.sh
