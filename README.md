@@ -1,4 +1,5 @@
 # FlexWAN: Software Hardware Co-design for Cost-Effective and Resilient Optical Backbones 
+[![DOI](https://zenodo.org/badge/679538458.svg)](https://zenodo.org/badge/latestdoi/679538458)
 
 ## 1. Overview
 FlexWAN is a novel flexible WAN infrastructure designed to provision cost effective WAN capacity while ensuring resilience to optical failures. FlexWAN achieves this by incorporating spacing-variable hardware at the optical layer, enabling the generated wavelength to optimize the utilization of limited spectrum resources for the WAN capacity. FlexWAN solves the algorithmic challenges by formulating the problem of provisioning WAN capacity with the goal of minimizing hardware costs.
