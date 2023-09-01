@@ -81,9 +81,9 @@ In addition to optical planning and restoration, FlexWAN involves the processing
 
 |  Executable Files                                |  Description                                          |
 |  -----                                           |  -----                                                |
-|  `src/length_gap_spec_efficiency_analysis.jl`    | Analyzes spectral efficiency in relation to length gaps within the optical network.    |
-|  `src/path_length_length_data_rate_analysis.jl`  | Examines the relationship between path lengths and data rate capabilities in the network.    |
-|  `src/transponder_spec_analysis.jl`              | Assesses the specifications and capabilities of transponders in the optical network.        |
+|  `src/length_gap_spec_efficiency_analysis.jl`    | Output the length gaps and spectrum efficiency    |
+|  `src/path_length_length_data_rate_analysis.jl`  | Ouput path lengths and data rate    |
+|  `src/transponder_spec_analysis.jl`              | Output the number of transponders and spectrum in the optical network       |
 
 ## 3. Running simulation
 Running the FlexWAN simulation involves several important steps, including meeting requirements, setting up the environment, running the system, and processing intermediate results. Below, we provide a detailed guide on how to run the FlexWAN simulation effectively.
