@@ -7,7 +7,7 @@ FlexWAN is a novel flexible WAN infrastructure designed to provision cost effect
 For a full technical description on FlexWAN, please read our ACM SIGCOMM 2023 paper:
 
 > C. Miao, Z. Zhong, Y. Zhang, K. He, F. Li, M. Chen, Y. Zhao, X. Li, Z. He, X. Zou, J. Wang, "FlexWAN: Software Hardware Co-design for Flexible and Cost-Effective Optical Backbones," ACM SIGCOMM, 2023. 
-
+https://people.csail.mit.edu/zhizhenzhong/papers/2023_SIGCOMM_flexwan.pdf
 
 ## 2. Artifact Structure
 In this section, we delve into the organization of the artifacts associated with FlexWAN, which includes input data, source code, and scripts necessary for the TE simulation. This section provides insight into how these components are structured for your convenience. 
